@@ -1,3 +1,5 @@
+/* Gallery.css */
+
 .gallery {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -7,27 +9,64 @@
     column-width: 33%;
     padding: 0 12px;
 }
-  
+
 .gallery .pics {
+    position: relative;
     -webkit-transition: all 350ms ease;
     transition: all 350ms ease;
     cursor: pointer;
     margin-bottom: 12px;
 }
 
-.gallery .pics:hover{
-    filter: opacity(.8);
+.gallery .pics:hover {
+    filter: opacity(0.8);
 }
 
-@media(max-width: 991px){
-    .gallery{
+.gallery .pics .icon-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+
+.gallery .pics svg {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.gallery .pics svg:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery .add-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.gallery .add-image:hover {
+    background-color: #e0e0e0;
+}
+
+@media(max-width: 991px) {
+    .gallery {
         -webkit-column-count: 2;
         -moz-column-count: 2;
         column-count: 2;
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 480px) {
     .gallery {
         -webkit-column-count: 1;
         -moz-column-count: 1;
@@ -38,9 +77,9 @@
     }
 }
 
-/*model*/
+/* Model */
 
-.model{
+.model {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -49,8 +88,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
-    transition: opacity .4s ease, visibility ,4s ease, transform .5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.5s ease-in-out;
     visibility: hidden;
     opacity: 0;
     transform: scale(0);
@@ -58,14 +97,13 @@
     z-index: 999;
 }
 
-.model.open{
+.model.open {
     visibility: visible;
     opacity: 1;
     transform: scale(1);
-
 }
 
-.model img{
+.model img {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -73,19 +111,40 @@
     display: block;
     line-height: 0;
     box-sizing: border-box;
-    padding: 20px 0 20px;
+    padding: 20px 0;
     margin: 0 auto;
 }
 
-.model.open svg{
+.model.open svg {
     position: fixed;
     top: 10px;
     right: 10px;
     width: 2rem;
     height: 2rem;
     padding: 5px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #ffffff;
     cursor: pointer;
-    
+}
+
+.model input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.model button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.model button:hover {
+    background-color: #0056b3;
 }
