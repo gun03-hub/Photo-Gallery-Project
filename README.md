@@ -49,6 +49,7 @@ photo-gallery/
 
    ```bash
    npm install
+   npm install react-scripts
    ```
 
 3. **Run the development server:**
